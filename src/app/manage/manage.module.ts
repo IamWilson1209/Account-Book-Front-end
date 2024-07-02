@@ -6,6 +6,7 @@ import { Header2Component } from './shared/header2/header2.component';
 import { HomeComponent } from './home/home.component';
 import { ManageComponent } from './manage.component';
 import { FormsModule } from '@angular/forms';
+import { AccountbookComponent } from './accountbook/accountbook.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FormsModule } from '@angular/forms';
     MenuComponent,
     Header2Component,
     HomeComponent,
-    ManageComponent
+    ManageComponent,
+    AccountbookComponent
   ],
   imports: [
     CommonModule,

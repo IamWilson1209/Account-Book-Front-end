@@ -11,7 +11,6 @@ import { GroupApiService } from 'src/app/@services/group-api.service';
 export class TodoListComponent implements OnInit {
   dataList: Group[] = [];
 
-
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {

@@ -6,11 +6,11 @@ import { LoginPost } from '../@models/login.model';
   providedIn: 'root'
 })
 export class LoginService {
-  private url = '/api/login6_8';
+  private url = '/api/login';
 
   constructor(private http: HttpClient) { }
 
   JWT登入(value: LoginPost) {
-    return this.http.post(this.url + '/jwtLogin', value);
+    return this.http.post(this.url + '/jwtLogin', value, { responseType: 'text' });
   }
 }

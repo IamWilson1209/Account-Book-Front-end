@@ -1,4 +1,4 @@
 export interface LoginPost {
-    AccountName: string;
+    Account: string;
     Password: string;
 }

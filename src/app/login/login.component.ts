@@ -10,7 +10,7 @@ import { LoginService } from '../@services/login.service';
 })
 export class LoginComponent implements OnInit {
   loginValue: LoginPost = {
-    AccountName: '',
+    Account: '',
     Password: ''
   }
 
@@ -26,8 +26,6 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('/manage/home');
       }
     });
-
-
   }
 
 }

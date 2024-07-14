@@ -1,6 +1,6 @@
 {
     "/api": {
-        "target": "https://todo.talllkai.com/",
+        "target": "https://127.0.0.1:7284",
         "secure": false,
         "changeOrigin": true
     }

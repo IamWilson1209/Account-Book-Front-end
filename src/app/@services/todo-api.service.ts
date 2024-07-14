@@ -6,7 +6,7 @@ import { Todo } from '../@models/todo.model';
   providedIn: 'root'
 })
 export class TodoApiService {
-  private url = '/api/todo6_8';
+  private url = '/api/Todo';
 
   constructor(private http: HttpClient) { }
 

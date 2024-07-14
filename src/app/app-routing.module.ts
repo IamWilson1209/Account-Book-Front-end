@@ -18,8 +18,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes)], // 將路由配置註冊為應用程式的根路由
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-// 

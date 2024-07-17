@@ -10,6 +10,7 @@ const routes: Routes = [
       { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
       { path: 'todo', loadChildren: () => import('./todo/todo.module').then(m => m.TodoModule) },
       { path: 'account', loadChildren: () => import('./account/account.module').then(m => m.AccountModule) },
+      { path: 'accountbook', loadChildren: () => import('./accountbook/accountbook.module').then(m => m.AccountbookModule) },
       { path: '', redirectTo: 'home', pathMatch: 'full' }
     ]
   },

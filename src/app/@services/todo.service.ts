@@ -1,3 +1,4 @@
+// 專門處理前端代辦事項狀態更新
 import { Injectable } from '@angular/core';
 import { Todo, TodoClass, TodoStatusType } from '../@models/todo.model';
 import { TodoApiService } from './todo-api.service';
@@ -25,7 +26,6 @@ export class TodoService {
         list = this.todoDataList;
         break;
     }
-
     return list;
   }
 

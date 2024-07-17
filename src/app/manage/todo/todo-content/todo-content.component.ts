@@ -8,7 +8,7 @@ import { TodoService } from 'src/app/@services/todo.service';
   styleUrls: ['./todo-content.component.scss']
 })
 export class TodoContentComponent implements OnInit {
-  title = 'OneTodo';
+  title = 'MyTodoList';
   constructor(private todoService: TodoService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -16,9 +16,8 @@ export class TodoContentComponent implements OnInit {
 
     this.route.data.subscribe(data => {
       this.todoService.todoDataList = data['todoList'];
+      console.log('從路由解析獲取的待辦事項:', this.todoService.todoDataList);
       this.todoService.ready();
     });
   }
-
-
 }

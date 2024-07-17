@@ -11,6 +11,7 @@ export class GroupApiService {
   constructor(private http: HttpClient) { }
 
   取得資料() {
+    console.log('發送GET請求到:', this.url);
     return this.http.get<Group[]>(this.url);
   }
 

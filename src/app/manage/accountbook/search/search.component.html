@@ -1,0 +1,75 @@
+<div class="fixed-controls">
+    <div>
+        <h3>Custome Filter</h3> <!-- 加入標題顯示 -->
+        
+        <div class="form-group">
+            <label for="startDate">Start date：</label>
+            <input type="date" id="startDate" name="startDate" class="form-control" [(ngModel)]="startDate">
+        </div>
+        
+        <div class="form-group">
+            <label for="endDate">End date：</label>
+            <input type="date" id="endDate" name="endDate" class="form-control" [(ngModel)]="endDate">
+        </div>
+    
+        <div class="form-group">
+            <label for="bank">Select Bank：</label>
+            <select id="bank" name="bank" class="form-control" [(ngModel)]="selectedBank">
+                <option value="All Banks">All Banks</option>
+                <option *ngFor="let bank of banks" [value]="bank">{{ bank }}</option>
+            </select>
+        </div>
+  
+        <div class="form-group">
+            <label for="category">Select Category：</label>
+            <select id="category" name="category" class="form-control" [(ngModel)]="selectedCategory">
+                <option value="All Categories">All Categories</option>
+                <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+            </select>
+        </div>
+  
+        <div class="form-group">
+            <label for="Item">Select Item：</label>
+            <select id="item" name="item" class="form-control" [(ngModel)]="selectedItem">
+                <option value="All Items">All Items</option>
+                <option *ngFor="let item of items" [value]="item">{{ item }}</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <button (click)="fetchDailyExpensesByFilter()" class="search-button gradient">Search</button>
+        </div>
+    </div>
+  </div>
+  
+  <div>
+    <h1>All Expenses Records</h1><br>
+  </div>
+  
+  <div *ngIf="dailyExpenses.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Category</th>
+          <th>Item</th>
+          <th>Cost</th>
+          <th>Bank</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let expense of dailyExpenses">
+          <td>{{ expense.RecordDateTime | date:'yyyy-MM-dd' }}</td>
+          <td>{{ expense.Category }}</td>
+          <td>{{ expense.Item }}</td>
+          <td>{{ expense.Cost }}</td>
+          <td>{{ expense.Bank }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div *ngIf="dailyExpenses.length === 0">
+    <p>No daily expenses found.</p>
+  </div>
+  

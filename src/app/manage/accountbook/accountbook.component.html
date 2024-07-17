@@ -46,6 +46,12 @@
   <h1>All Expenses Records</h1><br>
 </div>
 
+<ul>
+  <li><a routerLink="./search">功能一</a></li>
+  <!-- 根據需要添加更多連結 -->
+</ul>
+<router-outlet></router-outlet>
+
 <div *ngIf="dailyExpenses.length > 0">
   <table>
     <thead>

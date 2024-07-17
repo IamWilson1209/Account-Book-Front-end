@@ -1,0 +1,73 @@
+/* accountbook.component.scss */
+
+/* Reset default margin and padding for better alignment */
+table {
+    width: 85%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    // background-color: #d02828;
+}
+
+/* Style the table header */
+thead {
+  background-color: #f2f2f2;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Alternate row background color for better readability */
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover effect for rows */
+tbody tr:hover {
+  background-color: #5986b9;
+}
+
+/* Button basic function */
+.search-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 20px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+/* Button characteristics */
+.search-button.gradient {
+  background: linear-gradient(to right, #6f36d8, #6e45ea);
+}
+.fixed-controls {
+  position: fixed;
+  top: 80px;
+  left: 1750px;
+  background-color: white;
+  padding: 50px; /* 調整內容的內邊距 */
+  border: 1px solid #ccc;
+  z-index: 1000;
+  box-shadow: 0 4px 4px rgba(83, 70, 70, 0.1);
+}
+.fixed-controls > div {
+  margin-bottom: 10px; /* 調整內容之間的間距 */
+}
+.form-group {
+  margin-bottom: 20px; /* 調整每個表單群組之間的間距 */
+}
+h3 {
+  margin-top: 0; /* 清除標題的頂部間距 */
+  font-size: 1.5rem; /* 調整標題字體大小 */
+  color: #534bc2; /* 調整標題顏色 */
+}
+.search-button {
+  margin-left: 15px; /* 搜尋按鈕與其他元素之間的間距 */
+}

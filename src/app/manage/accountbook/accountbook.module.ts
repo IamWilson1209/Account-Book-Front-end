@@ -5,12 +5,16 @@ import { AccountbookRoutingModule } from './accountbook-routing.module';
 import { AccountbookComponent } from './accountbook.component';
 import { DatePipe } from '@angular/common';
 import { SearchComponent } from './search/search.component';
+import { UplaodComponent } from './uplaod/uplaod.component';
+import { ManageComponent } from './manage/manage.component';
 
 
 @NgModule({
   declarations: [
     AccountbookComponent,
     SearchComponent,
+    UplaodComponent,
+    ManageComponent,
   ],
   imports: [
     CommonModule,

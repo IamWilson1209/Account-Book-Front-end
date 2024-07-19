@@ -5,4 +5,5 @@ export interface DailyExpenseDto {
     Item: string;
     Cost: number;
     Bank: string;
+    Remark: string;
   }

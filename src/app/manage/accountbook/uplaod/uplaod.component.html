@@ -1,0 +1,50 @@
+<form (ngSubmit)="onSubmit()">
+
+    <div>
+        <h1>Upload your Daily Expense here</h1>
+    </div>
+
+    <div>
+      <label for="recordDateTime">Date</label>
+      <input type="date" id="recordDateTime" [(ngModel)]="recordDateTime" name="recordDateTime" required>
+    </div>
+  
+    <div>
+      <label for="category">Category</label>
+      <select id="category" [(ngModel)]="selectedCategory" name="category" required (change)="onCategoryChange(selectedCategory)">
+        <option *ngFor="let category of categories" [ngValue]="category">{{ category.CategoryName }}</option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="item">Item</label>
+      <select id="item" [(ngModel)]="selectedItem" name="item" required>
+        <option *ngFor="let item of items" [value]="item.ItemName">{{ item.ItemName }}</option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="cost">Cost</label>
+      <input type="number" id="cost" [(ngModel)]="cost" name="cost" required>
+    </div>
+  
+    <div>
+      <label for="bank">Bank</label>
+      <select id="bank" [(ngModel)]="selectedBank" name="bank" required>
+        <option *ngFor="let bank of banks" [value]="bank">{{ bank }}</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="remark">Remark</label>
+      <input type="text" id="remark" [(ngModel)]="remark" name="remark">
+    </div>
+
+    <div>
+      <label for="uploadFile">Upload File</label>
+      <input type="file" id="uploadFile" (change)="onFileChange($event)" multiple>
+    </div>
+  
+    <button type="submit">Upload</button>
+</form>
+  

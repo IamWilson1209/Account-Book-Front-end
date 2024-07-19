@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { DailyExpenseDto } from '../@models/DailyExpense.model';
+import { DailyExpenseDto } from '../@models/dailyexpense.model';
+import { DailyExpenseUploadDto } from '../@models/dailyexpenseupload.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class DailyExpenseApiService {
 
   constructor(private http: HttpClient) { }
 
-  取得資料() {
+  getallDailyExpensesApi() {
     return this.http.get<DailyExpenseDto[]>(this.url);
   }
 
@@ -33,8 +34,12 @@ export class DailyExpenseApiService {
     if (item) {
     params = params.set('item', item);
     }
-
     return this.http.get<DailyExpenseDto[]>(`${this.url}/byFilter`, { params });
+  }
+
+  addDailyExpenseApi(value: DailyExpenseUploadDto) {
+    console.log(`Fetching Daily Expenses for 新增`, JSON.stringify(value));
+    return this.http.post<DailyExpenseUploadDto>(`${this.url}/postdailyexpense`, value);
   }
 
 }

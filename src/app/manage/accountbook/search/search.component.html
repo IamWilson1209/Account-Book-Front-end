@@ -1,6 +1,6 @@
 <div class="fixed-controls">
     <div>
-        <h3>Custome Filter</h3> <!-- 加入標題顯示 -->
+        <h3>Custome Filter</h3> 
         
         <div class="form-group">
             <label for="startDate">Start date：</label>
@@ -22,9 +22,9 @@
   
         <div class="form-group">
             <label for="category">Select Category：</label>
-            <select id="category" name="category" class="form-control" [(ngModel)]="selectedCategory">
+            <select id="category" name="category" class="form-control" [(ngModel)]="selectedCategory" required (change)="onCategoryChange(selectedCategory)">
                 <option value="All Categories">All Categories</option>
-                <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+                <option *ngFor="let category of categories" [ngValue]="category">{{ category.CategoryName }}</option>
             </select>
         </div>
   
@@ -32,7 +32,7 @@
             <label for="Item">Select Item：</label>
             <select id="item" name="item" class="form-control" [(ngModel)]="selectedItem">
                 <option value="All Items">All Items</option>
-                <option *ngFor="let item of items" [value]="item">{{ item }}</option>
+                <option *ngFor="let item of items" [value]="item.ItemName">{{ item.ItemName }}</option>
             </select>
         </div>
         
@@ -55,6 +55,7 @@
           <th>Item</th>
           <th>Cost</th>
           <th>Bank</th>
+          <th>Remark</th>
         </tr>
       </thead>
       <tbody>
@@ -64,6 +65,7 @@
           <td>{{ expense.Item }}</td>
           <td>{{ expense.Cost }}</td>
           <td>{{ expense.Bank }}</td>
+          <td>{{ expense.Remark }}</td>
         </tr>
       </tbody>
     </table>
